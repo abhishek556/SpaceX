@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadSpaceXService } from '../../services/load-spacex.service'
 import { FlightInfo } from '../../models/flight-info';
+import {isLandLoaded} from '../../store/home.selectors';
+import { Store } from '@ngrx/store';
+import { LandingState } from '../../reducers';
+import { launchSuccess } from '../../store/landing.actions';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private loadSpaceXService: LoadSpaceXService) { }
 
   ngOnInit(): void {
+    this.spaceXData = [];    
     this.loadSpaceXService.getLaunchSuccess( this.limit, this.successfulLaunch).subscribe(result => 
       this.spaceXData = result);
   }

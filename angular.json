@@ -129,6 +129,7 @@
   },
   "defaultProject": "SpaceX",
   "cli": {
-    "analytics": "6e04afc7-10a5-407e-9d6d-46390d95e1d4"
+    "defaultCollection": "@ngrx/schematics",
+    "analytics": "6f07d500-ede7-4e36-b9ac-9f0679bd831f"
   }
 }

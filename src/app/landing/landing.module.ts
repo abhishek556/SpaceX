@@ -8,7 +8,12 @@ import { SidepanelComponent } from './components/sidepanel/sidepanel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from 'src/material/material.module';
 import { FormsModule } from '@angular/forms';
+import { MoreInfoComponent } from './components/more-info/more-info.component';
+import { StoreModule } from '@ngrx/store';
+import * as fromLanding from './reducers';
 
+import { EffectsModule } from '@ngrx/effects';
+import { LandingEffects } from '../landing/store/landing.effects';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -16,16 +21,18 @@ import { FormsModule } from '@angular/forms';
     InfoCardComponent, 
     DashboardComponent, 
     SidepanelComponent, 
-    FooterComponent
+    FooterComponent, 
+    MoreInfoComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule,
+    MaterialModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent
-  ]
+  ],
+  entryComponents:[MoreInfoComponent]
 })
 export class LandingModule { }
