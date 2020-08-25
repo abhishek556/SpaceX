@@ -1,0 +1,27 @@
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <mat-form-field>
+                    <mat-label>List length</mat-label>
+                    <input matInput [(ngModel)]="limit" type="number" (change)="this.limitNew.emit(this.limit);">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 check">
+                Check if image not loaded
+                <mat-slide-toggle [(ngModel)]="checked" id="toggle"></mat-slide-toggle>
+            </div>
+            <div class="col-md-6">
+                <mat-paginator [length]="totalSize" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                    (page)="pageEvent = handlePage($event)">
+                </mat-paginator>
+            </div>
+        </div>
+        <div class="row">
+            <app-info-card class="col-md-4 info-card" *ngFor='let flight of spaceXPagData' [flight]='flight'
+                [checked]="checked">
+            </app-info-card>
+
+        </div>
+    </div>
+</main>

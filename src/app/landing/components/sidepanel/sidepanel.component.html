@@ -1,0 +1,32 @@
+<nav class="container">
+  <div class="sidebar-sticky">
+    <h2>Filters</h2>
+    <h5>Launch Year</h5>
+    <div class="row">
+      <div *ngFor="let yr of years" class="col-md-6 col-xs-6 fiftyPercent">
+        <button mat-raised-button background="#000"
+          (click)="selectedYear = yr;this.yearSelected.emit(selectedYear);" [ngClass]="{'selected': selectedYear == yr}">{{yr}}</button>
+      </div>
+    </div>
+    <h5>Successful Launch</h5>
+    <div class="row">
+      <div class="col-md-6 col-xs-6 fiftyPercent">
+        <button mat-raised-button
+          (click)="successfulLaunch = true;this.launchSuccess.emit(successfulLaunch);" [ngClass]="{'selected': successfulLaunch}">True</button>
+      </div>
+      <div class="col-md-6 col-xs-6 fiftyPercent">
+        <button mat-raised-button
+          (click)="successfulLaunch = false;this.launchSuccess.emit(successfulLaunch);" [ngClass]="{'selected': !successfulLaunch}">False</button>
+      </div>
+    </div>
+    <h5>Successful Landing</h5>
+    <div class="row lastRow">
+      <span class="col-md-6 col-xs-6 fiftyPercent">
+        <button mat-raised-button (click)="successfulLand = true;this.landSuccess.emit(successfulLand);" [ngClass]="{'selected': successfulLand}">True</button>
+      </span>
+      <span class="col-md-6 col-xs-6 fiftyPercent">
+        <button mat-raised-button (click)="successfulLand = false;this.landSuccess.emit(successfulLand);" [ngClass]="{'selected': !successfulLand}">False</button>
+      </span>
+    </div>
+  </div>
+</nav>

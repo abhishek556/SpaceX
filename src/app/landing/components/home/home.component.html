@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-sidepanel class="col-md-3 col-xs-12 bg-light sidebar" (yearSelected)="year($event)"
+            (launchSuccess)="launch($event)" (landSuccess)="land($event)"></app-sidepanel>
+        <app-dashboard [spaceXData]='spaceXData' class="dashboard col-md-9 col-xs-10" (limitNew)="limitChanged($event)">
+        </app-dashboard>
+    </div>
+</div>
